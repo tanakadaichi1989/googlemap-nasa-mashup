@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#GOOGLE ANALYTICS
+gem 'google-analytics-rails'
+
 
 #環境変数の設定
 gem 'dotenv-rails' 
