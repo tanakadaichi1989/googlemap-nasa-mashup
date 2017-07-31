@@ -8,10 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= analytics_init if Rails.env.production? %>
 
-
     <!--GoogleMAP API-->
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAP"]%>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=<% ENV["GOOGLEMAP"] %>&callback=initMap">
     </script>
 
 
