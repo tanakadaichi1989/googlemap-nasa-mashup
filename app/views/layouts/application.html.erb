@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mashup20170730</title>
+    <title>GoogleMAP × NASA Landslide API</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,7 @@
 
     <!--GoogleMAP API-->
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLEMAP"] %>&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=ENV["GOOGLEMAP"]&callback=initMap">
     </script>
 
 
