@@ -9,6 +9,10 @@ end
 gem 'google-analytics-rails'
 
 
+#GOOGLE MAP
+gem 'gmaps4rails'
+
+
 #環境変数の設定
 gem 'dotenv-rails' 
 
