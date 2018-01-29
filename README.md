@@ -1,24 +1,6 @@
-# README
+# GoogleMap × NASA Mashup
+GoogleMapとNASA（アメリカ航空宇宙局）オープンデータのマッシュアップ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## このアプリの役割
+災害情報の可視化（今回はNASAが提供する「地滑り災害」の情報を利用）
+![image](https://github.com/tanakadaichi1989/googlemap-nasa-mashup/blob/master/image.png)
