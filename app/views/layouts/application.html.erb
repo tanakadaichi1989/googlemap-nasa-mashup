@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <%= render('layouts/head') %>
+<head>
+    <title>GoogleMAP × NASA Landslide API</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= analytics_init if Rails.env.production? %>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLEMAP"]%>&callback=initMap"></script>
+
+    <script>
+    function initMap() {
+        var place = {lat: 35, lng: 135};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: place,
+          mapTypeId: 'satellite',
+        });
+
+        position = <%= @array.to_json.html_safe %>;
+
+        for(var i=0; i<position.length; i++){
+        var marker = new google.maps.Marker({
+          position: position[i],
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: parseInt(position[i].fatalities)/8,
+            strokeColor:'white',
+            fillColor:'red',
+            fillOpacity:0.5,
+            strokeWeight:0.5,
+          },
+          map: map,
+          title: String("発生日：" + position[i].date + " | 死者数：" + position[i].fatalities)
+        });
+        }
+    }
+  </script>
+</head>
 
   <body>
-    <%= render('layouts/header') %>
+    <%= render('layouts/header')%>
     <%= yield %>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLEMAP"]%>&callback=initMap"></script>
   </body>
 </html>
