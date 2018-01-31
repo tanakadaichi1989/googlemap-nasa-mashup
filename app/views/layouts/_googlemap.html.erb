@@ -8,11 +8,7 @@
           mapTypeId: 'satellite',
         });
 
-
-
         position = <%= @array.to_json.html_safe %>;
-
-
 
         for(var i=0; i<position.length; i++){
         var marker = new google.maps.Marker({
@@ -30,4 +26,6 @@
         });
         }
     }
+
+    initMap()
 </script>
