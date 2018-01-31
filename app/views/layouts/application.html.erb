@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoogleMAP × NASA Landslide API</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= analytics_init if Rails.env.production? %>
-
-    <%= render('layouts/googlemap') %>
-  </head>
+  <%= render('layouts/head') %>
 
   <body>
-    <header id="header">
-      <h1>GoogleMAP × NASA Mashup</h1>
-    </header>
+    <%= render('layouts/header') %>
     <%= yield %>
   </body>
 </html>

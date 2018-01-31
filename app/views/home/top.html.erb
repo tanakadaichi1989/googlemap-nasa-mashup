@@ -1,15 +1,4 @@
 
 <div id="map"></div>
 
-
-<div class="table-responsive">
-<table class="table">
-<thead>
-<th>発生時刻</th><th>国名</th><th>緯度</th><th>経度</th><th>人口</th><th>地滑りの規模</th><th>死亡者数</th><th>負傷者数</th>
-</thead>
-
-<% @result.each do |i| %>
-<tr><td><%= i["date"].to_date %></td><td><%= i["countryname"] %></td><td><%= i["geolocation"]["coordinates"][1] %></td><td><%= i["geolocation"]["coordinates"][0] %></td><td><%= i["population"] %></td><td><%= i["landslide_size"] %></td><td><%= i["fatalities"] %></td><td><%= i["injuries"] %></td></tr>
-<% end %>
-</table>
-</div>
+<%= render('home/table') %>
